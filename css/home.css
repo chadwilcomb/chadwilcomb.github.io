@@ -50,11 +50,9 @@ a
 
 #logo 
 {
-    float: left;
     color: WhiteSmoke;
     font-family: 'Museo300', Sans-Serif;
     font-size: 50px;
-    margin: 20px 0px 20px 0px;
 }
 
 header nav {margin-top: 26px}
@@ -73,3 +71,5 @@ header nav {margin-top: 26px}
     padding: 20px;
     line-height: 1.25em;
 }
+.article.picture { padding-left: 50% }
+.article.picture img { margin-left: -380px }
