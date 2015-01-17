@@ -55,7 +55,6 @@ a
     font-size: 50px;
 }
 
-header nav { margin-top: 26px }
 .nav-pills>li>a { border-radius: 20px; }
 
 .article
@@ -72,3 +71,26 @@ header nav { margin-top: 26px }
     line-height: 1.25em;
 }
 .article img.home-image { max-width: 100%; height: auto; }
+
+@media (min-width: 768px) {
+
+}
+@media (max-width: 993px) {  
+    #logo { text-align: center; }
+    .nav-justified { width: 100%; }
+    .nav-justified>li { float: none; }
+
+}
+@media (min-width: 768px) and (max-width: 993px) {
+    .nav-justified>li { display: table-cell; width: 1%; }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    header nav { margin-top: 26px }
+    .nav.nav-pills { float: right; }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+}
