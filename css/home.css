@@ -79,6 +79,7 @@ a
     #logo { text-align: center; }
     .nav { width: 100%; }
     .nav>li { float: none; }
+    .nav>li>a { margin-bottom: 5px; text-align: center; }
 
 }
 @media (min-width: 768px) and (max-width: 993px) {
