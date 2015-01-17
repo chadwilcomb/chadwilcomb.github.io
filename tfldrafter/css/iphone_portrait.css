@@ -1,0 +1,47 @@
+﻿body  
+{  
+    background-color:#CCC;  
+    margin-top:-0px;  
+    margin-left:-0px;  
+}  
+  
+#wrap  
+{  
+    overflow:auto;  
+    width:320px;  
+    height:480px;  
+  
+}  
+  
+#header  
+{  
+    /* background:url(../images/header.jpg);  
+    background-repeat:no-repeat;  */
+    height:49px;  
+  
+}  
+  
+#content  
+{  
+    /* background:url(../images/middle.jpg);  
+    background-repeat:repeat-y;  */
+    margin-top:-5px;  
+  
+}  
+  
+p  
+{  
+    margin:5px;  
+    padding-left:25px;  
+    width:270px;  
+    font-size:10px;  
+    font-family:arial,"san serif";  
+}  
+  
+#bottom  
+{  
+    /* background:url(../images/bottom_corners.jpg);  
+    background-repeat:no-repeat;  */
+    height:131px;  
+    margin-top:-5px;  
+}  

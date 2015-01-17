@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" />
+    <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+    on iOS devices-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>
+      Measure Tool
+    </title>
+    <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.3/js/dojo/dijit/themes/claro/claro.css">
+    <style type="text/css">
+      html,body {
+        height:100%;
+        width:100%;
+        margin:0;
+      }
+      body {
+        background-color:#FFF;
+        overflow:hidden;
+        font-family:"Trebuchet MS";
+      }
+      #map {
+        margin:5px;
+        padding:0px;
+      }
+      #rightPane{
+        width:200px;
+      }
+
+      </style>
+      <script type="text/javascript">
+          djConfig = {
+              parseOnLoad: true
+          };
+      </script>
+      <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.3compact"></script>
+
+    <script type="text/javascript">
+        dojo.require("dijit.layout.BorderContainer");
+        dojo.require("dijit.layout.ContentPane");
+
+        dojo.require("esri.map");
+        dojo.require("esri.dijit.Measurement");
+        dojo.require("esri.dijit.Scalebar");
+
+        var map;
+
+
+
+        function init() {
+
+            //This sample requires a proxy page to handle communications with the ArcGIS Server services. You will need to  
+            //replace the url below with the location of a proxy on your machine. See the 'Using the proxy page' help topic 
+            //for details on setting up a proxy page.
+            esri.config.defaults.io.proxyUrl = "/arcgisserver/apis/javascript/proxy/proxy.ashx";
+
+            esri.config.defaults.io.alwaysUseProxy = false;
+
+            //This service is for development and testing purposes only. We recommend that you create your own geometry service for use within your applications
+            esri.config.defaults.geometryService = new esri.tasks.GeometryService("http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer");
+
+            var initExtent = new esri.geometry.Extent({ "xmin": -14812884.585436888, "ymin": -1545862.4600390457, "xmax": 7122708.043724001, "ymax": 9294742.639474899, "spatialReference": { "wkid": 102100} });
+            
+            map = new esri.Map("map", {
+                extent: initExtent,
+                wrapAround180: true
+            });
+
+            dojo.connect(map, 'onLoad', function (map) {
+                dojo.connect(dijit.byId('map'), 'resize', resizeMap);
+                initToolbar(map);
+            });
+
+            var basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer");
+            map.addLayer(basemap);
+
+            var referenceLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer");
+            map.addLayer(referenceLayer);
+
+            var pacificSt = esri.geometry.geographicToWebMercator(new esri.geometry.Point({ "x": -74.0, "y": 40.686389, "spatialReference": { "wkid": 4326} }));
+            map.centerAndZoom(pacificSt, 0.0008);
+        }
+        function resizeMap() {
+            //resize the map when the browser resizes - view the 'Resizing and repositioning the map' section in
+            //the following help topic for more details http://help.esri.com/EN/webapi/javascript/arcgis/help/jshelp_start.htm#jshelp/inside_guidelines.htm
+            var resizeTimer;
+            
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                map.resize();
+                map.reposition();
+            }, 500);
+        }
+
+        function initToolbar(mymap) {
+            //define a new line symbol and point symbol to use for measure tools
+            var pms = new esri.symbol.PictureMarkerSymbol("../images/flag.png", 24, 24);
+            pms.setOffset(9, 11);
+            var sls = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_DOT,
+          new dojo.Color([255, 0, 0, .55]), 4);
+            var measurement = new esri.dijit.Measurement({
+                map: mymap,
+                lineSymbol: sls,
+                pointSymbol: pms
+            }, dojo.byId('measurementDiv'));
+            measurement.startup();
+        }
+
+        //show map on load
+        dojo.addOnLoad(init);
+        
+    </script>
+  </head>
+  
+  <body class="claro">
+    <div id="mainWindow" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:'false'"
+    style="width:100%; height:100%;">
+      <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+      </div>
+      <div id="rightPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'right'">
+        <div>Use the measurement widget to calculate area, find the distance between locations and display the current mouse location.  </div>
+        <div id="measurementDiv"></div>
+      </div>
+    </div>
+  </body>
+</html>

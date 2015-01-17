@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Log In page</title>
+    <link href="../css/form.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="frm_entry">
+<form method="post" id="subscribe_frm" action="">
+ 
+<div class="formlabel">Your Name:</div>
+<div class="formfield"><input type="text" name="name" id="txt_name" /></div>
+ 
+<div class="formlabel">Password:</div>
+<div class="formfield"><input type="password" name="email" id="txt_pwd" /></div>
+ 
+<div class="formsubmit" id="submit">
+<input type="button" name="submit" value="Click Here to Submit" onclick="showUserName();" />
+<input type="reset" value="Erase and Start Over" />
+</div>
+ 
+</form>
+
+</div>
+
+<div id="frm_results">
+<p><span id="result">
+<script type="text/javascript">
+
+    function showUserName() {
+
+        var username = document.getElementById('txt_name').value
+        var password = document.getElementById('txt_pwd').value
+
+        if (username == 'chad' && password == 'chad123') {
+            document.getElementById("result").innerHTML = 'Welcome'
+        }
+        else if (username == 'chad' || password == 'chad123') {
+            document.getElementById("result").innerHTML = 'Your username or password is incorrect'
+        }
+        else document.getElementById("result").innerHTML = 'You obviously don\'t belong here';
+        
+    }
+</script>
+</span>
+</p>
+</div>
+
+</body>
+</html>

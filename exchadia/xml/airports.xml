@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <flightSched>
+    <Code>BOS</Code>
+    <Name>Boston, MA - Logan Intl (BOS)</Name>
+    <City>Boston</City>
+    <State>MA</State>
+    <Active>1</Active>
+  </flightSched>
+  <flightSched>
+    <Code>LAX</Code>
+    <Name>Los Angeles, CA - Los Angeles Intl (LAX)</Name>
+    <City>Los Angeles</City>
+    <State>CA</State>
+    <Active>1</Active>
+  </flightSched>
+  <flightSched>
+    <Code>JFK</Code>
+    <Name>New York, NY - John F. Kennedy Intl (JFK)</Name>
+    <City>New York</City>
+    <State>NY</State>
+    <Active>1</Active>
+  </flightSched>
+  <flightSched>
+    <Code>PHL</Code>
+    <Name>Philadelphia, PA - Philadelphia Intl (PHL)</Name>
+    <City>Philadelphia</City>
+    <State>PA</State>
+    <Active>1</Active>
+  </flightSched>
+  <flightSched>
+    <Code>SAN</Code>
+    <Name>San Diego, CA - San Diego Intl (SAN)</Name>
+    <City>San Diego</City>
+    <State>CA</State>
+    <Active>1</Active>
+  </flightSched>
+</NewDataSet>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Guest Book</title>
+    <link href="../css/form.css" rel="stylesheet" type="text/css" />
+    <link href="../css/homework.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id=wrapper">
+<h1>Please Sign the Guest Book!</h1>
+
+<form method="post" action="../_gdForm/webformmailer.asp">
+<input type="hidden" name="subject" value="Guest Book Submission" />
+<input type="hidden" name="redirect" value="netintensive/thankyou.htm" />
+
+<div class="formlabel">Username:</div>
+<div class="formfield"><input type="text" name="username" size ="38" /></div>
+
+<div class="formlabel">Password:</div>
+<div class="formfield"><input type="password" name="pwd" size ="38" /></div>
+
+<div class="formlabel">Your full name:</div>
+<div class="formfield"><input type="text" name="name" size ="38" /></div>
+
+<div class="formlabel">Email Address</div>
+<div class="formfield"><input type="text" name="email" size ="38" /></div>
+
+<div class="formlabel">Mailing Address</div>
+<div class="formfield"><textarea name="snail" rows="5" cols="30"></textarea></div>
+
+<div class="formlabel">What type of address is that?</div>
+<div class="formfield">
+    <input type="radio" name="snailtype" value ="home" checked="checked" />Home<br />
+    <input type="radio" name="snailtype" value ="work" />Work<br />
+    <input type="radio" name="snailtype" value ="pobox" />P.O. Box<br />
+    <input type="radio" name="snailtype" value ="other" />Other<br />
+</div>
+
+<div class="formlabel">How should we contact you? (check all that apply)</div>
+<div class="formfield">
+    <input type="checkbox" name="method[]" value="email" checked="checked" />Email<br />
+    <input type="checkbox" name="method[]" value="snail" />Snail Mail<br />
+    <input type="checkbox" name="method[]" value="nocontact" />Please do not contact me<br />
+</div>
+
+
+<div class="formsubmit" id="submit">
+    <input type="submit" value="Click Here to Submit" />
+    <input type="reset" value="Erase and Start Over" />
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

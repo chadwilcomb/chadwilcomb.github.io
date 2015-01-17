@@ -1,0 +1,109 @@
+﻿body 
+{
+    background-color: WhiteSmoke;
+    font-family: Helvetica;
+}
+
+#wrapper 
+{
+    width:800px;
+    margin: auto;
+}
+
+#header 
+{
+    height: 100px;
+    float:left;
+    width:100%;
+    text-align:center;
+}
+
+#main 
+{
+    height: 700px;
+    float:left;
+    width:100%;
+}
+
+#nav 
+{
+    height: 50px;
+    float:left;
+    width:100%;
+    text-align:center;
+    padding-top: 20px;
+}
+
+#navLinks 
+{
+    list-style-type: none;
+    text-indent: 0px;
+}
+
+#nav li
+{
+    display: inline;
+    color: #003a6b;
+    font-family: Helvetica, Verdana, Arial;
+    font-weight:bold;
+    margin: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+
+#nav li a:link, #nav li a:visited 
+{
+    text-decoration:none;
+    color: #003a6b;
+    cursor: pointer;
+}
+
+#nav li a:hover, #nav li a:active 
+{
+    text-decoration: none;
+    color: White;
+    cursor: pointer;
+    background-color: FireBrick;
+}
+
+#resultsGrid, #gvResults, #gvKeepers 
+{
+    width: 100%;
+}
+
+#setup 
+{
+    width: 400px;
+    margin: auto;
+}
+
+#setup div 
+{
+    width: 278px;
+    margin: auto;
+}
+
+#buttons
+{
+    border: 1px solid #003a6b;
+    background-color: #003a6b;
+    width: 278px;
+    text-align: center;
+}
+
+#buttons input[type="submit"] 
+{
+    width: 268px;
+    padding: 3px;
+    margin: 5px;
+}
+
+#lblMessage 
+{
+    color: White;
+}
+
+#lblVal 
+{
+    color: Red;
+    font-size: 1.2em;
+}
