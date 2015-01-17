@@ -55,7 +55,7 @@ a
     font-size: 50px;
 }
 
-header nav {margin-top: 26px}
+header nav { margin-top: 26px }
 .nav-pills>li>a { border-radius: 20px; }
 
 .article
@@ -71,5 +71,4 @@ header nav {margin-top: 26px}
     padding: 20px;
     line-height: 1.25em;
 }
-.article.picture { padding-left: 50% }
-.article.picture img { margin-left: -380px }
+.article img.home-image { max-width: 100%; height: auto; }
