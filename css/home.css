@@ -39,7 +39,7 @@ body
 {
     font-family: 'CartoGothicStdBook', Sans-Serif;
     /*background: #1e3246 url('../images/blue-background.jpg') top left repeat;*/
-    color: #1e3246;
+    background-color: #1e3246;
 }
 
 a
