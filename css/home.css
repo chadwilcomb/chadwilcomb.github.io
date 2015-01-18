@@ -127,6 +127,8 @@ a
     text-decoration: underline;
 }
 
+.article .thumb img { width: 100%; }
+
 #footer
 {
     float: left;
