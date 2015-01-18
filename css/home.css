@@ -127,7 +127,7 @@ a
     text-decoration: underline;
 }
 
-.article .thumb img { width: 100%; }
+.article .thumb img { max-width: 100%; }
 
 #footer
 {
