@@ -161,28 +161,3 @@ a
     margin-left: 2.5em;
 }
 
-#social_links
-{
-    float: left;
-    width: 450px;
-    position: relative;
-}
-
-#tweets 
-{
-    float: right;
-    width: 450px;
-    position: relative;
-}
-
-#tweets h3 a 
-{
-    font-size: 12px;
-    margin-left: 10px;
-    font-style: italic;
-}
-
-#twitter_update_list li
-{
-    margin: 1em 0 1em 0;
-}
