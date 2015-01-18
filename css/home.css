@@ -127,19 +127,6 @@ a
     text-decoration: underline;
 }
 
-.thumb
-{
-    position: relative;
-    float: left;
-}
-
-.descrip
-{
-    position:relative;
-    margin-left: 200px;
-    padding: 0 0 0 1em;
-}
-
 #footer
 {
     float: left;
